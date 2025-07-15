@@ -48,61 +48,6 @@ Create a `.env` file in the project root:
 # Copy and paste the variables above with your actual values
 # Never commit this file to version control!
 ```
-
-**Option 2: System Environment Variables**
-
-*Linux/Mac:*
-```bash
-export GOOGLE_PROJECT_ID="your-project-id"
-export GOOGLE_PRIVATE_KEY_ID="your-key-id"
-export GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nyour-key\n-----END PRIVATE KEY-----"
-export GOOGLE_CLIENT_EMAIL="your-email@project.iam.gserviceaccount.com"
-export GOOGLE_CLIENT_ID="your-client-id"
-```
-
-*Windows:*
-```cmd
-set GOOGLE_PROJECT_ID=your-project-id
-set GOOGLE_PRIVATE_KEY_ID=your-key-id
-set GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nyour-key\n-----END PRIVATE KEY-----"
-set GOOGLE_CLIENT_EMAIL=your-email@project.iam.gserviceaccount.com
-set GOOGLE_CLIENT_ID=your-client-id
-```
-
-#### Security Best Practices
-
-🔒 **Important Security Notes:**
-- Never commit credentials to version control (`.env` files are excluded in `.gitignore`)
-- Use service accounts with minimal required permissions
-- Regularly rotate API keys and credentials
-- Store production credentials in secure key management systems
-- Use different credentials for development, testing, and production environments
-
-#### Google Sheets API Setup
-
-To obtain the required credentials:
-
-1. **Create a Google Cloud Project**:
-   - Go to [Google Cloud Console](https://console.cloud.google.com/)
-   - Create a new project or select existing one
-
-2. **Enable Google Sheets API**:
-   - Navigate to "APIs & Services" > "Library"
-   - Search for "Google Sheets API" and enable it
-
-3. **Create Service Account**:
-   - Go to "APIs & Services" > "Credentials"
-   - Click "Create Credentials" > "Service Account"
-   - Download the JSON key file
-
-4. **Extract Credentials**:
-   - Open the downloaded JSON file
-   - Extract the required fields for environment variables
-
-5. **Grant Sheet Access**:
-   - Share your Google Sheet with the service account email
-   - Provide appropriate permissions (read/write as needed)
-
 ---
 
 ## 📁 File Structure & Component Breakdown
@@ -343,20 +288,6 @@ Take Profit = Entry Price × (1 - Take Profit %)
 
 #### `.gitignore`
 **Purpose**: Defines files and directories to exclude from version control
-
-**Key Exclusions**:
-- **Credentials**: API keys, configuration files, authentication tokens
-- **Data Files**: CSV files, datasets, historical data
-- **Environment**: Virtual environments, compiled files, cache
-- **IDE Files**: Editor-specific configuration and temporary files
-- **Log Files**: Trading logs, error logs, debug information
-- **OS Files**: System-generated files (.DS_Store, Thumbs.db)
-
-**Security Benefits**:
-- Prevents accidental exposure of sensitive trading credentials
-- Keeps repository clean and focused on source code
-- Protects proprietary data and trading algorithms
-
 ---
 
 ## 🔬 **Technical Analysis Strategies Implemented**
@@ -399,11 +330,11 @@ Take Profit = Entry Price × (1 - Take Profit %)
 
 | Strategy | Expected Win Rate | Profit Factor | Max Drawdown | Best Market |
 |----------|------------------|---------------|---------------|-------------|
-| Stochastic | 45-60% | 1.2-1.8 | 15-25% | Ranging |
-| RSI | 50-65% | 1.3-2.0 | 12-20% | Sideways |
+| Stochastic | 35-50% | 1.2-1.8 | 15-25% | Ranging |
+| RSI | 45-55% | 1.3-2.0 | 12-20% | Sideways |
 | Bollinger Bands | 40-55% | 1.1-1.6 | 18-28% | All Markets |
-| EMA Crossover | 35-50% | 1.5-2.5 | 20-35% | Trending |
-| MACD | 40-55% | 1.2-1.9 | 16-26% | Trending |
+| EMA Crossover | 30-45% | 1.5-2.5 | 20-35% | Trending |
+| MACD | 40-50% | 1.2-1.9 | 16-26% | Trending |
 
 ### Risk-Return Profiles
 
